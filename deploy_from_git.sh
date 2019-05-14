@@ -231,7 +231,6 @@ elif [[ $TREEISH = dirty ]] && [[ $TAE != "" ]]; then
 	# to be safe.
 	#
 	push_up_tree
-	create_symlink
 else
 	#
 	# Subsequent deploys
@@ -249,9 +248,9 @@ else
 	fi
 	create_release_copy
 	push_up_tree
-	create_symlink
 fi
 
 post_run
+create_symlink
 clean_up
 exit 0
